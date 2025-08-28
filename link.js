@@ -43,20 +43,21 @@ for(let allBtn of callBtn){
         let mainDiv = document.getElementById('nameAndNumber')
 
         let div = document.createElement("div")
-       div.classList.add("flex","justify-between","shadow-lg", "border-1","mx-6", "mt-2", "p-2", "rounded-2xl", 'items-center' )
+       div.classList.add("flex","justify-between","shadow-md","mx-6", "mt-2", "p-2", "rounded-2xl", 'items-center' , "bg-[#FAFAFA]" )
    
        let leftDiv = document.createElement('div')
+       
        leftDiv.innerHTML =
         `
-       <h2 class="text-lg font-semibold">${name1}</h2>
-       <h2 class="text-lg font-semibold">${num1}</h2>
+       <h2 class="text-lg font-medium">${name1}</h2>
+       <h2 class="text-lg font-medium">${num1}</h2>
        
        `
 
        let rightDiv = document.createElement("div")
 
        let timeH2 = document.createElement("h2")
-       timeH2.classList.add('text-lg', 'font-semibold')
+       timeH2.classList.add('text-lg', 'font-medium')
        rightDiv.appendChild(timeH2);
 
 
@@ -93,6 +94,9 @@ setInterval(showtime, 1000, timeH2);
        
     })
 }
+
+
+
 
 // copy button
 
