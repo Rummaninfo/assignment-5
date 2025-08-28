@@ -15,7 +15,7 @@ for(let button of btn){
 let callBtn = document.getElementsByClassName("call-btn")
 for(let allBtn of callBtn){
     allBtn.addEventListener('click', function(){
-
+ 
        
         let name = allBtn.parentNode.parentNode.childNodes[5].innerText
         let num = allBtn.parentNode.parentNode.childNodes[7].innerText
@@ -91,6 +91,25 @@ setInterval(showtime, 1000, timeH2);
        
      
        
+    })
+}
+
+// copy button
+
+let copyBtn = document.getElementsByClassName("copy-btn")
+
+for(let copyButton of copyBtn){
+    copyButton.addEventListener('click', function(){
+        let number = copyButton.parentNode.parentNode.childNodes[7].innerText
+      
+        alert("নতুন কপি করা হয়েছে" +' '+  number )
+        navigator.clipboard.writeText(number)
+
+       let copyNumber = document.getElementById('copy-number').innerText
+       let copyNumberParse = parseInt(copyNumber)
+       let CopyNumberPlus = copyNumberParse + 1
+       document.getElementById('copy-number').innerText = CopyNumberPlus
+
     })
 }
 
