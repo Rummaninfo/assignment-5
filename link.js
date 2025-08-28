@@ -25,26 +25,72 @@ for(let allBtn of callBtn){
         let parseCoin = parseInt(coin)
         
          if (parseCoin < 20){
-        alert('আপনার পর্যাপ্ত কয়েন নেই কল করতে কমপক্ষে   কয়েন লাগবে ।')
+        alert('আপনার পর্যাপ্ত কয়েন নেই কল করতে কমপক্ষে 20 কয়েন লাগবে ।')
         return
        }
        let minus = parseCoin - 20
         document.getElementById("coin").innerText = minus
         alert(name + " " +  num)
        
+
+
+
+
+
+       let name1 = allBtn.parentNode.parentNode.childNodes[3].innerText
+        let num1 = allBtn.parentNode.parentNode.childNodes[7].innerText
+        
+        let mainDiv = document.getElementById('nameAndNumber')
+
+        let div = document.createElement("div")
+       div.classList.add("flex","justify-between","shadow-lg", "border-1","mx-6", "mt-2", "p-2", "rounded-2xl", 'items-center' )
+   
+       let leftDiv = document.createElement('div')
+       leftDiv.innerHTML =
+        `
+       <h2 class="text-lg font-semibold">${name1}</h2>
+       <h2 class="text-lg font-semibold">${num1}</h2>
        
-        
+       `
+
+       let rightDiv = document.createElement("div")
+
+       let timeH2 = document.createElement("h2")
+       timeH2.classList.add('text-lg', 'font-semibold')
+       rightDiv.appendChild(timeH2);
 
 
-        
+   
+
+div.appendChild(leftDiv);
+div.appendChild(rightDiv);
+mainDiv.appendChild(div);
 
 
-        
+function showtime(element) {
+    let now = new Date();
+    let timeString = now.toLocaleTimeString();
+    element.textContent = timeString;
+}
+
+showtime(timeH2); 
+setInterval(showtime, 1000, timeH2);
+
+
+// mainDiv.appendChild(div)
+      
+ let clear = document.getElementById("clearBtn")
+ clear.addEventListener('click', function(){
+     let cartContainer = document.getElementById('nameAndNumber')
+     cartContainer.innerHTML = ''
+
+ })
+
+
        
-
-
-
-
+       
+     
+       
     })
 }
 
