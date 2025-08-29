@@ -25,12 +25,12 @@ for(let allBtn of callBtn){
         let parseCoin = parseInt(coin)
         
          if (parseCoin < 20){
-        alert('আপনার পর্যাপ্ত কয়েন নেই কল করতে কমপক্ষে 20 কয়েন লাগবে ।')
+        alert("❌"+ ' ' +'আপনার পর্যাপ্ত কয়েন নেই কল করতে কমপক্ষে 20 কয়েন লাগবে ।')
         return
        }
        let minus = parseCoin - 20
         document.getElementById("coin").innerText = minus
-        alert(name + " " +  num)
+        alert("📞" +' ' + name + " " +  num)
        
 
 
