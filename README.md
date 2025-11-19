@@ -1,30 +1,99 @@
-What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
-Answer: 
-getElementById দিয়ে ১ তা এলিমেন্ট আনে 
-getElementsByClassName দিয়ে অনেকগুলো এলিমেন্ট আনা হয়ে  (live collection)
-querySelector  CSS selector দিয়ে প্রথম এলিমেন্ট  আনে।
-querySelectorAll CSS selector দিয়ে সব এলিমেন্ট  আনে (static NodeList)
+# 🚨 Emergency Service Directory
 
+A modern and responsive **Emergency Service web application** where users can quickly access important national emergency numbers, call them, copy them, and view call history in real time.  
+Built with **HTML, Tailwind CSS (CDN), Font Awesome & Vanilla JavaScript**.
 
-How do you create and insert a new element into the DOM?
-Answer: 
-createElement দিয়ে নতুন এলিমেন্ট বানাতে হয় “p”
-P ট্যাগ  ভিতর   innerText = “ new text”
-P  ট্যাগ  কে যার ভিতর এপেন্ড করবো তাকে আইডি দিয়ে ধরবো getElementById(‘div’)
-div.appendChild(‘p’)
+---
 
-What is Event Bubbling and how does it work?
-Answer: 
-যখন কোনো এলিমেন্ট কে ক্লিক করা হয়, তখন সেই ইভেন্ট প্রথমে এলিমেন্ট এ ট্রিগার হয় তারপর  প্যারেন্ট  এর  প্যারেন্ট এভাবে উপরে দিকে  ডকুমেন্ট চলে যায় 
+## 🚀 Live Demo
 
-What is Event Delegation in JavaScript? Why is it useful? 
-Answer: 
-parent element এ event listener বসিয়ে child element গুলোর event হ্যান্ডেল করা। প্রতিটা child এ আলাদা listener বসানোর দরকার নেই  শুধু parent এ বসালেই হবে  event bubbling হয়ে child এর ক্লিক ধরা যাবে।
+🔗 **https://rummaninfo.github.io/assignment-5/**
 
+---
 
-What is the difference between preventDefault() and stopPropagation() methods? 
-Answer: 
-যখন কোনো element-এর একটা ডিফল্ট অ্যাকশন থাকে যেমন link-এ ক্লিক করলে অন্য পেজে যাওয়া, form submit করলে reload হওয়া, তখন preventDefault() দিলে সেই কাজটা বন্ধ হয়ে যায়।
+## 🖼️ Screenshot
 
-Event যখন ঘটে, সেটা প্রথমে সেই element-এ ট্রিগার হয় → তারপর তার parent → তারপর document পর্যন্ত যায় bubbling
-stopPropagation() দিলে এই উপরে ওঠা বন্ধ হয়ে যায়।
+![App Screenshot](https://your-screenshot-link.com)
+
+> Replace this link with an actual screenshot URL.
+
+---
+
+## 📝 Overview
+
+This project is an interactive **Emergency Contacts Directory** that includes:
+
+- National Emergency Service (999)
+- Police
+- Fire Service
+- Ambulance
+- Women & Child Helpline
+- Anti-Corruption
+- Electricity Outage
+- NGO Helpline
+- Bangladesh Railway
+
+Each service card includes a **Copy** button and a **Call** button with live counters and a call history panel.
+
+---
+
+## ⭐ Features
+
+- ❤️ **Increase Likes**  
+  Clicking any heart icon adds +1 to the total heart counter.
+
+- 📞 **Call Button With Coin System**  
+  - Each call costs **20 coins**.  
+  - If coins are less than 20 → a Bangla warning alert appears.  
+  - On calling → shows alert with service name + number.  
+  - Deducts 20 coins live.
+
+- 🧾 **Call History Panel**  
+  - Adds name + number + real-time clock on every call.  
+  - Time updates every second automatically.  
+  - **Clear** button removes all history instantly.
+
+- 📋 **Copy Button**  
+  - Copies phone number using `navigator.clipboard.writeText()`  
+  - Shows Bangla alert: “নতুন কপি করা হয়েছে {number}”  
+  - Increases copy count in the navbar.
+
+- 🎨 **Responsive UI**  
+  - Tailwind CSS CDN for clean responsive layout  
+  - Grid layout on desktop, stacked layout on mobile
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- HTML5  
+- Tailwind CSS (CDN)  
+- Font Awesome Icons  
+- Vanilla JavaScript    
+
+### No Backend Required  
+This is a fully static frontend project.
+
+---
+
+## 📂 Main Files
+
+- **index.html** → Main UI  
+- **link.js** → All JavaScript logic  
+- **assets/** → Images and icons  
+- **tailwind.config.js** (optional)
+
+---
+
+## 🔍 Core JavaScript Logic
+
+### ❤️ Heart (Love) Counter
+```js
+let btn = document.getElementsByClassName("heart-icon");
+for (let button of btn) {
+    button.addEventListener('click', function () {
+        let love = document.getElementById("love").innerText;
+        document.getElementById("love").innerText = Number(love) + 1;
+    });
+}
